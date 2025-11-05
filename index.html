@@ -389,16 +389,17 @@
     </div>
   </div>
 
-  <iframe
-    id="spotify-player"
-    src="https://open.spotify.com/embed/playlist/37i9dQZF1DX0Yxoavh5qJV?utm_source=generator&theme=0"
-    width="300"
-    height="80"
-    frameborder="0"
-    allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
-  ></iframe>
+  <!-- 🎵 Reproductor de Spotify fijo -->
+<iframe
+  id="spotify-player"
+  src="https://open.spotify.com/playlist/7l4sdtYsHVypensTVz8rb3?si=bfcc2f9e63434cd9"
+  width="300"
+  height="80"
+  frameborder="0"
+  allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+  style="position: fixed; bottom: 25px; left: 25px; border-radius: 12px; overflow: hidden; box-shadow: 0 0 20px rgba(255,255,255,0.5); z-index: 9998;"
+></iframe>
 
-  <button id="music-button">🎶 Encender Espíritu Navideño 🎅</button>
 
   <!-- 🎁 Popup -->
   <div id="navidad-popup">
@@ -453,21 +454,6 @@
       setTimeout(() => snowflake.remove(), 6000);
     }
     setInterval(crearNieve, 120);
-
-    const spotifyFrame = document.getElementById("spotify-player");
-    const button = document.getElementById("music-button");
-    let activo = false;
-    button.addEventListener("click", () => {
-      if (!activo) {
-        spotifyFrame.src += "&autoplay=1";
-        button.textContent = "🔇 Pausar Espíritu 🎄";
-        activo = true;
-      } else {
-        spotifyFrame.src = spotifyFrame.src.replace("&autoplay=1", "");
-        button.textContent = "🎶 Encender Espíritu Navideño 🎅";
-        activo = false;
-      }
-    });
 
     // 🎅 Popup mágico con confeti
     const santa = document.querySelector(".santa");
