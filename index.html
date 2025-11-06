@@ -390,16 +390,11 @@
   </div>
 
   <!-- 🎵 Reproductor de Spotify fijo -->
-<iframe
-  id="spotify-player"
-  src="https://open.spotify.com/playlist/7l4sdtYsHVypensTVz8rb3?si=bfcc2f9e63434cd9"
-  width="300"
-  height="80"
-  frameborder="0"
-  allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
-  style="position: fixed; bottom: 25px; left: 25px; border-radius: 12px; overflow: hidden; box-shadow: 0 0 20px rgba(255,255,255,0.5); z-index: 9998;"
-></iframe>
-
+<iframe id="spotify-player"
+    src="https://open.spotify.com/embed/playlist/37i9dQZF1DX0Yxoavh5qJV?utm_source=generator&theme=0"
+    width="300" height="80" frameborder="0"
+    allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture">
+</iframe>
 
   <!-- 🎁 Popup -->
   <div id="navidad-popup">
@@ -508,7 +503,9 @@
         document.body.appendChild(caja);
         document
           .getElementById("cerrar-anuncio")
-          .addEventListener("click", () => caja.remove());
+          .addEventListener("click", () => {
+  alert("🎅 Este mensaje navideño no se puede cerrar. ¡Disfruta el espíritu de la Navidad! 🎄🎁");
+});
       } catch (e) {
         console.log("⚠️ No se pudo cargar anuncios.json");
       }
